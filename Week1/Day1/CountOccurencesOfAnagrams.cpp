@@ -9,24 +9,18 @@ using namespace std;
 
 int main()
 {
-    string txt, ptr;
-    cin >> txt >> ptr;
+    string txt, pat;
+    cin >> txt >> pat;
     int count = 0;
 
     int n = txt.length();
-    int k = ptr.length();
-    // cout<<k<<"\n";
+    int k = pat.length();
 
-    // int freqtxt[26] = {0};
-    // int freqptr[26] = {0};
-
-    vector<int> freqtxt(26, 0);
-    vector<int> freqptr(26, 0);
+    int freqtxt[26] = {0};
+    int freqpat[26] = {0};
 
     for (int i = 0; i < k; i++)
-        freqptr[ptr[i] - 97]++;
-
-    cout << freqptr[k] << "\n";
+        freqpat[pat[i] - 97]++;
     int i = 0, j = 0;
 
     while (j < n)
@@ -39,8 +33,11 @@ int main()
         else
         {
             bool flag = true;
-            if (freqtxt != freqptr)
-                flag = false;
+            for (int v = 0; v < 26; v++)
+            {
+                if (freqtxt[v] != freqpat[v])
+                    flag = false;
+            }
             if (flag)
                 count++;
             freqtxt[txt[i] - 97]--;
