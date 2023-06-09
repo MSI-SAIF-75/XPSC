@@ -12,14 +12,14 @@ int main()
         char ch;
         cin >> ch;
 
-        arr[(int)(ch - 97)]++;
+        arr[(int)(ch - 'a')]++;
     }
 
     for (int i = 0; i < 26; i++)
     {
         while (arr[i] != 0)
         {
-            cout << (char)(i + 97);
+            cout << (char)(i + 'a');
             arr[i]--;
         }
     }
