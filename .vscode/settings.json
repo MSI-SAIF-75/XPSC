@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "iostream": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "functional": "cpp"
     },
     "cph.general.onceMaintainerMessage": false
 }
