@@ -1,10 +1,15 @@
 /*
+input:
 21
+output:
+8
+
+Explain :
 21
-4 6 8 10 12 14 16 18 20 
-6 9 12 15 18 21 
-10 15 20 
-14 21 
+4 6 8 10 12 14 16 18 20
+6 9 12 15 18 21
+10 15 20
+14 21
 
 
 4 = 1
@@ -19,10 +24,9 @@
 9 = 1
 15 = 1 + 1 = 2
 21 = 1 + 1 = 2
- 
- 
-*/
 
+
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -43,9 +47,9 @@ int main()
             {
                 flag[j] = true;
                 factors[j]++;
-                cout<<j<<" ";
+                cout << j << " ";
             }
-            cout<<"\n";
+            cout << "\n";
         }
 
         if (factors[i] == 2)
