@@ -8,16 +8,15 @@ int main()
     cin >> t;
     while (t--)
     {
-        string s;
-        cin >> s;
-
-        int l = s.size() / 2;
-        int sum1 = 0;
+        string str;
+        cin >> str;
+        ll l = str.size() / 2;
+        ll sum1 = 0;
         for (int i = 0; i < l; i++)
-            sum1 += s[i];
-        int sum2 = 0;
-        for (int j = l; j < s.size(); j++)
-            sum2 += s[j];
+            sum1 += str[i];
+        ll sum2 = 0;
+        for (int i = l; i < str.size(); i++)
+            sum2 += str[i];
 
         if (sum1 == sum2)
             cout << "YES\n";
