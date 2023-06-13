@@ -17,6 +17,7 @@ int main()
             cin >> arr[i];
             mp[arr[i]]++;
         }
+
         ll mx = INT_MIN;
         ll flag = 0;
         for (ll i = 1; i <= n; i++)
@@ -27,7 +28,6 @@ int main()
                 flag = 1;
             }
         }
-
         if (flag == 1)
             cout << mx << "\n";
         else
