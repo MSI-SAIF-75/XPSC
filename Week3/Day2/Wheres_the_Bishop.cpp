@@ -12,22 +12,22 @@ int main()
     while (t--)
     {
         char s[8 + 1][8 + 1];
-        for (int i = 1; i <= 8; i++)
+        for (int i = 0; i < 8; i++)
         {
-            for (int j = 1; j <= 8; j++)
+            for (int j = 0; j < 8; j++)
                 cin >> s[i][j];
         }
 
-        for (int i = 1; i < 8; i++)
+        for (int i = 0; i < 8; i++)
         {
-            for (int j = 1; j < 8; j++)
+            for (int j = 0; j < 8; j++)
             {
                 bool flag = true;
                 for (int k = 0; k < 5; k++)
                     if (s[i + dx[k]][j + dy[k]] != '#')
                         flag = false;
                 if (flag)
-                    cout << i << " " << j << "\n";
+                    cout << i+1 << " " << j+1 << "\n";
             }
         }
     }
