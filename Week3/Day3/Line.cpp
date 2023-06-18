@@ -5,24 +5,22 @@
     cout.tie(0);
 #define ll long long
 using namespace std;
-const ll N = 2e5 + 5;
 
 ll t;
 void doWork()
 {
     ll n;
     cin >> n;
-    vector<char> s(n + 1);
+    vector<char> str(n);
     for (int i = 1; i <= n; i++)
-        cin >> s[i];
+        cin >> str[i];
     vector<ll> v;
-
     ll ans = 0;
     for (int i = 1; i <= n; i++)
     {
         ll L = i - 1;
         ll R = n - i;
-        if (s[i] == 'L')
+        if (str[i] == 'L')
         {
             ll a = R - L;
             v.push_back(a);
@@ -35,7 +33,8 @@ void doWork()
             ans += R;
         }
     }
-    sort(v.begin(), v.end(), greater<int>());
+
+    sort(v.begin(), v.end(), greater<ll>());
 
     for (int i = 0; i < n; i++)
     {
