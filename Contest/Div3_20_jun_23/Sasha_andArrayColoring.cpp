@@ -18,7 +18,7 @@ void doWork()
     int sum = 0;
     if (n % 2 == 0)
     {
-        for (int i = 1; i < n; i += 2)
+        for (int i = 1; i <= n; i += 2)
         {
             if (abs(arr[i] - arr[i + 1]) != 1)
             {
