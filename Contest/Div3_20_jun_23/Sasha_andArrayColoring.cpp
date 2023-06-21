@@ -7,56 +7,75 @@
 using namespace std;
 
 ll t;
+// void doWork()
+// {
+//     ll n;
+//     cin >> n;
+//     vector<ll> arr(n + 1);
+//     for (int i = 1; i <= n; i++)
+//         cin >> arr[i];
+
+//     int sum = 0;
+//     if (n % 2 == 0)
+//     {
+//         for (int i = 1; i <= n; i += 2)
+//         {
+//             if (abs(arr[i] - arr[i + 1]) != 1)
+//             {
+//                 ll a = max(arr[i], arr[i + 1]);
+//                 ll b = min(arr[i], arr[i + 1]);
+//                 int sub = abs(a - b);
+//                 sum += sub;
+//             }
+//             else
+//             {
+//                 ll a = max(arr[i], arr[i + 2]);
+//                 ll b = min(arr[i], arr[i + 2]);
+//                 int sub = abs(a - b);
+//                 sum += sub;
+//                 i-=1;
+//             }
+//         }
+//     }
+//     else
+//     {
+//         for (int i = 1; i < n; i += 2)
+//         {
+//             if (abs(arr[i] - arr[i + 1]) != 1)
+//             {
+//                 ll a = max(arr[i], arr[i + 1]);
+//                 ll b = min(arr[i], arr[i + 1]);
+//                 int sub = abs(a - b);
+//                 sum += sub;
+//             }
+//             else
+//             {
+//                 ll a = max(arr[i], arr[i + 2]);
+//                 ll b = min(arr[i], arr[i + 2]);
+//                 int sub = abs(a - b);
+//                 sum += sub;
+//                 i-=1;
+//             }
+//         }
+//     }
+//     cout << sum << "\n";
+// }
+
 void doWork()
 {
     ll n;
     cin >> n;
-    vector<ll> arr(n + 1);
-    for (int i = 1; i <= n; i++)
+    ll arr[n];
+    for (int i = 0; i < n; i++)
         cin >> arr[i];
 
-    int sum = 0;
-    if (n % 2 == 0)
+    sort(arr, arr + n);
+    ll sum = 0, l = 0, r = n - 1;
+    while (l < r)
     {
-        for (int i = 1; i <= n; i += 2)
-        {
-            if (abs(arr[i] - arr[i + 1]) != 1)
-            {
-                ll a = max(arr[i], arr[i + 1]);
-                ll b = min(arr[i], arr[i + 1]);
-                int sub = abs(a - b);
-                sum += sub;
-            }
-            else
-            {
-                ll a = max(arr[i], arr[i + 2]);
-                ll b = min(arr[i], arr[i + 2]);
-                int sub = abs(a - b);
-                sum += sub;
-                i-=1;
-            }
-        }
-    }
-    else
-    {
-        for (int i = 1; i < n; i += 2)
-        {
-            if (abs(arr[i] - arr[i + 1]) != 1)
-            {
-                ll a = max(arr[i], arr[i + 1]);
-                ll b = min(arr[i], arr[i + 1]);
-                int sub = abs(a - b);
-                sum += sub;
-            }
-            else
-            {
-                ll a = max(arr[i], arr[i + 2]);
-                ll b = min(arr[i], arr[i + 2]);
-                int sub = abs(a - b);
-                sum += sub;
-                i-=1;
-            }
-        }
+        sum += abs(arr[l] - arr[r]);
+        l++;
+        r--;
     }
     cout << sum << "\n";
 }
