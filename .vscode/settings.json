@@ -3,7 +3,8 @@
         "iostream": "cpp",
         "valarray": "cpp",
         "functional": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "cmath": "cpp"
     },
     "cph.general.onceMaintainerMessage": false,
     "C_Cpp.errorSquiggles": "disabled"
