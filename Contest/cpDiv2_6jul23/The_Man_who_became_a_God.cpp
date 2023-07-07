@@ -20,7 +20,7 @@ void doWork()
     vector<int> temp;
     for (int i = 0; i < n; i++)
     {
-        int x = abs(arr[i] - arr[i + 1]);
+        int x = abs(arr[i+1] - arr[i]);
         temp.push_back(x);
     }
 
