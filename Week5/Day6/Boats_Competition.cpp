@@ -11,22 +11,30 @@ void doWork()
 {
     int n;
     cin >> n;
-    vector<int> a(n);
-    for (int i = 0; i < n; i++)
+    vector<int> a(n + 1);
+    for (int i = 1; i <= n; i++)
         cin >> a[i];
-
-    int sumF = a[0] + a[1];
-    int sumL = a[0] + a[n - 1];
-    int count1 = 0;
-    int count2 = 0;
-    for (int i = 0; i < n; i++)
+    sort(a.begin() + 1, a.end());
+    int ans = 0;
+    for (int sum = 1; sum <= 1000; sum++)
     {
-        if (a[i] + a[i + 1] == sumF)
-            count1++;
-        else if (a[i] + a[n - i - 1] == sumL)
-            count2++;
+        int count = 0;
+
+        for (int i = 1, j = n; i < j;)
+        {
+            if (a[i] + a[j] > sum)
+                j--;
+            else if (a[i] + a[j] < sum)
+                i++;
+            else
+            {
+                count++;
+                i++;
+                j--;
+            }
+        }
+        ans = max(ans, count);
     }
-    int ans = min(count1, count2);
     cout << ans << "\n";
 }
 
