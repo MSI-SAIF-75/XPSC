@@ -9,10 +9,10 @@ using namespace std;
 int t;
 void doWork()
 {
-    int m, n;
-    cin >> m >> n;
-    int com = (m * (m + 1) * (n*(n + 1))) / 4;
-    if (com % 4)
+    int w, l;
+    cin >> w >> l;
+
+    if ((w & 1) == 0 || (l & 1) == 0)
         cout << "YES"
              << "\n";
     else
