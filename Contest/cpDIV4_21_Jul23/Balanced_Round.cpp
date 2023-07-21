@@ -17,25 +17,23 @@ void solve()
         cin >> a[i];
 
     sort(a.begin(), a.end());
-    int ans = n - 1;
-    for (int i = 0; i < n - 1; i++)
-    {
-        // int count = 0;
-        // int j = i + 1;
-        // while (a[j] - a[j - 1] <= k)
-        // {
-        //     count++;
-        //     j++
-        // }
-        // ans = min(ans, n - count - 1);
-        // i += count;
+    int cnt = 1;
+    int mx = 0;
 
-        int count =0;
-        if(a[i+1]-a[i]<=k)count++;
-        else 
+    for (int i = 1; i < n; i++)
+    {
+        if (a[i] - a[i - 1] <= k)
+            cnt++;
+        else
+        {
+            mx = max(mx, cnt);
+            cnt = 1;
+        }
     }
 
-    cout << ans << "\n";
+    mx = max(mx, cnt);
+
+    cout << n - mx << "\n";
 }
 
 int main()
