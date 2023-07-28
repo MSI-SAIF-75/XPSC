@@ -10,7 +10,14 @@ const int MOD = 1e9 + 7;
 int t;
 void solve()
 {
-    
+    int b, c, h;
+    cin>>b>>c>>h;
+    int filling = c + h;
+
+    if (filling >= b)
+        cout << 2 * b - 1 << "\n";
+    else
+        cout << 2 * filling + 1 << "\n";
 }
 
 int main()
