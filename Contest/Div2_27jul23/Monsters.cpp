@@ -11,30 +11,31 @@ void solve()
 {
     int n, k;
     cin >> n >> k;
-    vector<int> a(n);
+    vector<int> a(n + 1);
     for (int i = 1; i <= n; i++)
         cin >> a[i];
-    vector<int> add;
+    vector<int> ans;
+    vector<pair<int, int>> index;
     for (int i = 1; i <= n; i++)
     {
-        if (a[i] == k)
-            add.push_back(i);
+        if (a[i] % k == 0)
+            ans.push_back(i);
+        else
+            index.push_back({a[i] % k, i});
     }
 
-    for (int i = 1; i <= n; i++)
-    {
-        if (a[i] < k)
-            add.push_back(i);
-    }
+    sort(index.begin(), index.end(), [&](pair<int, int> x, pair<int, int> y)
+         {
+        if(x.first==y.first)
+        return (x.second<y.second);
+        else 
+        return x.first>y.first; });
 
-    for (int i = 1; i <= n; i++)
-    {
-        if (a[i] != k && a[i] > k)
-            add.push_back(i);
-    }
+    for (auto i : index)
+        ans.push_back(i.second);
 
-    for (auto i : add)
-        cout << i << " ";
+    for (int i = 0; i < ans.size(); i++)
+        cout << ans[i] << " ";
     cout << "\n";
 }
 
