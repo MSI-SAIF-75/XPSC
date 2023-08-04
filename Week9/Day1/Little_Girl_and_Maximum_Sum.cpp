@@ -14,15 +14,15 @@ int main()
     {
         int l, r;
         cin >> l >> r;
-        mp[l - 1]++;
-        mp[r]--;
+        mp[l]++;
+        mp[r + 1]--;
     }
 
     vector<int> idx;
     int s = 0;
     for (int i = 0; i < n; i++)
     {
-        s += mp[i];
+        s += mp[i + 1];
         idx.push_back(s);
     }
 
