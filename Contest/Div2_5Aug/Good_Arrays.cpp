@@ -10,28 +10,28 @@ const int MOD = 1e9 + 7;
 int t;
 void solve()
 {
-    int n;
+    ll n;
     cin >> n;
-    vector<int> a(n);
-    vector<int> b;
-    for (int i = 0; i < n; i++)
-        cin >> a[i];
-
-    for (int i = 1; i < n; i++)
-        b.push_back(a[i]);
-    b.push_back(a[0]);
-
-    bool f = true;
+    ll a = 0;
+    ll b = 0;
     for (int i = 0; i < n; i++)
     {
-        if (a[i] == b[i])
-        {
-            f = false;
-            break;
-        }
+        int x;
+        cin >> x;
+        if (x == 1)
+            b += 2;
+        else
+            b++;
+        a += x;
+    }
+    // cout<<b<<" "<<a<<"\n";
+    if (n == 1)
+    {
+        cout << "NO\n";
+        return;
     }
 
-    if (f == true)
+    if (b <= a)
         cout << "YES\n";
     else
         cout << "NO\n";
